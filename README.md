@@ -2,3 +2,7 @@
 Project: Clitter Clicks\
 A Pet Care Simulator and AFK Clicker\
 Written in HTML, CSS, and Javascript
+
+## Dependencies required before installing
+
+## Building instructions
