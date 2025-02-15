@@ -5,4 +5,4 @@ Written in HTML, CSS, and Javascript
 
 ## Dependencies required before installing
 
-## Building instructions
+## Build instructions
