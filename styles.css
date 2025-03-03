@@ -1,0 +1,21 @@
+.menuOption {
+    text-align: center;
+    padding-top: 10px;
+    font-family: verdana;
+    font-size: 30px;
+}
+.title {
+    text-align: center;
+    padding: 30px;
+    font-family: verdana;
+    font-size: 50px;
+}
+#login {
+    text-align: right;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+.canvas {
+    display: none;
+}
