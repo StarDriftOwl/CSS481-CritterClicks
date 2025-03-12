@@ -19,3 +19,10 @@
 .canvas {
     display: none;
 }
+.gallery {
+    width: 25%;
+    border-color: black;
+}
+#id {
+    width: 25%;
+}
