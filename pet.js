@@ -33,15 +33,15 @@ function choosePet(pet){
     display.setAttribute("src", petImg);
 }
 
-function changeTabs(event, tabName){
+function changeStatsTabs(event, tabName){
     var i, tabcontent, tablinks;
     
-    tabcontent = document.getElementsByClassName("tabcontent");
+    tabcontent = document.querySelectorAll(".stats.tabcontent");
     for(i = 0; i < tabcontent.length; i++){
         tabcontent[i].style.display = "none";
     }
 
-    tablinks = document.getElementsByClassName("tablinks");
+    tablinks = document.querySelectorAll(".stats.tablinks");
     for(i = 0; i < tablinks.length; i++){
         if(tablinks[i].innerText == tabName){
             tablinks[i].classList.add("activeTabLink");
@@ -50,10 +50,33 @@ function changeTabs(event, tabName){
             tablinks[i].classList.remove("activeTabLink");
 
         }
-        tablinks[i].className = tablinks[i].className.replace("  active", "");
     }
 
     document.getElementById(tabName).style.display = "block";
     
-    event.currentTarget.className += "  active";
+    event.currentTarget.classList.add("active");
+}
+function changeShopTabs(event, tabName){
+    var i, tabcontent, tablinks;
+    
+    tabcontent = document.querySelectorAll(".shop.tabcontent");
+    for(i = 0; i < tabcontent.length; i++){
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.querySelectorAll(".shop.tablinks");
+    for(i = 0; i < tablinks.length; i++){
+        if(tablinks[i].innerText == tabName){
+            tablinks[i].classList.add("activeTabLink");
+        }
+        else{
+            tablinks[i].classList.remove("activeTabLink");
+
+        }
+        //tablinks[i].className = tablinks[i].className.replace("  active", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    
+    event.currentTarget.classList.add("active");
 }

@@ -15,22 +15,22 @@
                     <input type="text" id="namePicker">
                 </div>
                 <div class="hide" id="bottomBar">
-                        <button class="tablinks activeTabLink" onclick="changeTabs(event, 'Stats')">Stats</button>
-                        <button class="tablinks" onclick="changeTabs(event, 'Levels')">Levels</button>
-                        <button class="tablinks" onclick="changeTabs(event, 'Bag')">Bag</button>
-                    <div id="Stats" class="tabcontent tab">
+                    <button class="stats tablinks activeTabLink" onclick="changeStatsTabs(event, 'Stats')">Stats</button>
+                    <button class="stats tablinks" onclick="changeStatsTabs(event, 'Levels')">Levels</button>
+                    <button class="stats tablinks" onclick="changeStatsTabs(event, 'Bag')">Bag</button>
+                    <div id="Stats" class="stats tabcontent tab">
                         <p>Coins: </p>
                         <p>Clickers Active: </p>
                         <p>Pet Level: Pet XP:</p>
                     </div>
 
-                    <div id="Levels" class="tabcontent tab">
+                    <div id="Levels" class="stats tabcontent tab">
                         <p>Hunger: </p>
                         <p>Happiness: </p>
                         <p>Thirst: </p>
                     </div>
 
-                    <div id="Bag" class="tabcontent tab">
+                    <div id="Bag" class="stats tabcontent tab">
                         <p>Items: </p>
                     </div>
                 </div>
@@ -42,8 +42,21 @@
                 <img src="Pictures/didoo.png" class="galleryCell">
                 <img src="Pictures/scream.jpg" class="galleryCell">
             </div>
-            <div class="hide tab" id="shopTab">
+            <div class="hide" id="shopTab">
+                <button class="shop tablinks activeTabLink" onclick="changeShopTabs(event, 'Stage')">Stage</button>
+                <button class="shop tablinks" onclick="changeShopTabs(event, 'Item Shop')">Item Shop</button>
+                <button class="shop tablinks" onclick="changeShopTabs(event, 'Pet Shop')">Pet Shop</button>
+                <div id="Stage" class="shop tabcontent tab">
+                    <p>Stage: </p>
+                </div>
 
+                <div id="Item Shop" class="shop tabcontent tab">
+                    <p>Item Shop: </p>
+                </div>
+
+                <div id="Pet Shop" class="shop tabcontent tab">
+                    <p>Pet Shop: </p>
+                </div>
             </div>
         </div>
         <button id="next">Next</button>

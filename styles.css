@@ -118,9 +118,11 @@ label {
 .tabContent {
     display: none;
     padding: 5px 10px;
-    height: 150px;
 }
 #Stats {
+    display: block;
+}
+#Stage {
     display: block;
 }
 .activeTabLink {
@@ -129,4 +131,13 @@ label {
     padding-right: 25px;
     font-size: 20px;
     border-width: 2px;
+}
+.stats.tabcontent {
+    height: 120px;
+    padding: 20px;
+}
+.shop.tabcontent {
+    height: 510px;
+    width: 500px;
+    padding: 20px;
 }
