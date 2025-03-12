@@ -6,12 +6,60 @@
     </head>
 
     <body>
-        <div>
-            <img src="" id="pet">
-        </div>
-        <div id="gallery">
+        <p class="errmsg hide">Please choose a pet and a petname!</p>
+        <div class="flexContainer">
+            <div class="flexContainerColumn">
+                <div id="petDisplay">
+                    <img src="Pictures/blank.png" id="pet"><br>
+                    <label for="namePicker">Pet Name:</label>
+                    <input type="text" id="namePicker">
+                </div>
+                <div class="hide" id="bottomBar">
+                    <button class="stats tablinks activeTabLink" onclick="changeStatsTabs(event, 'Stats')">Stats</button>
+                    <button class="stats tablinks" onclick="changeStatsTabs(event, 'Levels')">Levels</button>
+                    <button class="stats tablinks" onclick="changeStatsTabs(event, 'Bag')">Bag</button>
+                    <div id="Stats" class="stats tabcontent tab">
+                        <p>Coins: </p>
+                        <p>Clickers Active: </p>
+                        <p>Pet Level: Pet XP:</p>
+                    </div>
 
-        </div>
+                    <div id="Levels" class="stats tabcontent tab">
+                        <p>Hunger: </p>
+                        <p>Happiness: </p>
+                        <p>Thirst: </p>
+                    </div>
 
+                    <div id="Bag" class="stats tabcontent tab">
+                        <p>Items: </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="gallery" class="flexWrap tab">
+                <img src="Pictures/ghostcat1.png" class="galleryCell">
+                <img src="Pictures/placeholder.png" class="galleryCell">
+                <img src="Pictures/didoo.png" class="galleryCell">
+                <img src="Pictures/scream.jpg" class="galleryCell">
+            </div>
+            <div class="hide" id="shopTab">
+                <button class="shop tablinks activeTabLink" onclick="changeShopTabs(event, 'Stage')">Stage</button>
+                <button class="shop tablinks" onclick="changeShopTabs(event, 'Item Shop')">Item Shop</button>
+                <button class="shop tablinks" onclick="changeShopTabs(event, 'Pet Shop')">Pet Shop</button>
+                <div id="Stage" class="shop tabcontent tab">
+                    <p>Stage: </p>
+                </div>
+
+                <div id="Item Shop" class="shop tabcontent tab">
+                    <p>Item Shop: </p>
+                </div>
+
+                <div id="Pet Shop" class="shop tabcontent tab">
+                    <p>Pet Shop: </p>
+                </div>
+            </div>
+        </div>
+        <button id="next">Next</button>
     </body>
 </html>
+<script src="pet.js"></script>
