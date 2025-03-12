@@ -29,6 +29,7 @@
     background-color: white;
     margin: 5px;
 }
+
 .cell {
     width: 200px;
     height: 200px;
@@ -158,4 +159,47 @@ button img{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+
+.rewards-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap to new row when full */
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.reward-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.reward-box img {
+    width: 50px;
+    height: 50px;
+}
+
+.reward-box button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: white;
+    font-size: 14px;
+}
+
+.reward-box button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
 }

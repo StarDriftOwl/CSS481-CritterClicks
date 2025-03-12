@@ -26,6 +26,39 @@ let newPet = null;
 let careType = "food";
 let items = [];
 
+
+function updateCountdown() {
+    let loginElement = document.getElementById("login");
+    if (!loginElement) return; // Prevent errors if element doesn't exist
+
+    const now = new Date();
+    const utc7Offset = -7 * 60;
+    const utcNow = now.getTime() + now.getTimezoneOffset() * 60000;
+    const localUtc7Time = new Date(utcNow + utc7Offset * 60000);
+
+    let resetTime = new Date(localUtc7Time);
+    resetTime.setUTCHours(12, 0, 0, 0); // Set to 12:00 PM UTC-7
+
+    if (localUtc7Time > resetTime) {
+        resetTime.setUTCDate(resetTime.getUTCDate() + 1);
+    }
+
+    let timeRemaining = resetTime - localUtc7Time;
+    let hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+    let minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+    loginElement.innerHTML = `<a href="dailyLogin.html">Daily login (Resets in ${hours}h ${minutes}m ${seconds}s)</a>`;
+}
+
+// Start countdown only after page loads
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById("login")) {
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    }
+});
+
 // adding onclicks, changing page when pet was created
 document.getElementById("next").onclick = () => {
     let pet = document.getElementById("pet");
@@ -237,4 +270,23 @@ function changeShopTabs(event, tabName){
     document.getElementById(tabName).style.display = "block";
     
     event.currentTarget.classList.add("active");
+}
+
+// Function to handle daily reward claims
+function claimDailyReward(amount) {
+    if (!newPet) {
+        alert("You need to select a pet first!");
+        return;
+    }
+
+    let lastClaimDate = localStorage.getItem("lastClaimDate") || "";
+    let today = new Date().toISOString().split("T")[0];
+
+    if (lastClaimDate === today) {
+        alert("You can only claim one reward per day. Come back after reset time!");
+        return;
+    }
+
+    newPet.addCoins(amount);
+    localStorage.setItem("lastClaimDate", today);
 }

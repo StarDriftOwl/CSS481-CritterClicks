@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script> <!-- Ensure script.js is loaded -->
+</head>
+<body>
+    <div class="daily-login">
+        <h1>Daily Login Rewards</h1>
+        <div class="rewards-container" id="rewardsContainer"></div>
+    </div>
+
+    <script>
+        let dailyRewards = [10, 20, 30, 40, 50, 60, 100];
+
+        function getResetTime() {
+            let now = new Date();
+            let utc7Offset = -7 * 60; // UTC-7 offset in minutes
+            let utcNow = now.getTime() + now.getTimezoneOffset() * 60000; // Convert to UTC
+            let localUtc7Time = new Date(utcNow + utc7Offset * 60000); // Convert to GMT-7
+            
+            let resetTime = new Date(localUtc7Time);
+            resetTime.setUTCHours(12, 0, 0, 0); // Set to 12:00 PM GMT-7
+
+            if (localUtc7Time > resetTime) {
+                resetTime.setUTCDate(resetTime.getUTCDate() + 1); // Move to next day
+            }
+
+            return resetTime;
+        }
+
+
+
+
+        function canClaimReward() {
+            let lastClaimDate = localStorage.getItem("lastClaimDate") || "";
+            let now = new Date();
+            let resetTime = getResetTime();
+            let today = now.toISOString().split("T")[0];
+
+            return now >= resetTime && lastClaimDate !== today;
+        }
+        function claimReward(day) {
+            let rewards = [10, 20, 30, 40, 50, 60, 100]; // Daily rewards list
+            claimDailyReward(rewards[day]); 
+        }
+
+
+        function loadRewards() {
+            let rewardsContainer = document.getElementById("rewardsContainer");
+            rewardsContainer.innerHTML = "";
+
+            let lastClaimDate = localStorage.getItem("lastClaimDate") || "";
+            let today = new Date().toISOString().split("T")[0];
+
+            for (let i = 0; i < dailyRewards.length; i++) {
+                let claimed = lastClaimDate === today;
+                let buttonState = claimed ? "disabled" : "";
+
+                rewardsContainer.innerHTML += `
+                    <div class="reward-box">
+                        <p>Day ${i + 1}</p>
+                        <img src="Pictures/coin.png" alt="Coins">
+                        <p>${dailyRewards[i]} Coins</p>
+                        <button id="claim${i}" onclick="claimReward(${i})" ${buttonState}>
+                            ${claimed ? "Claimed" : "Claim"}
+                        </button>
+                    </div>
+                `;
+            }
+        }
+
+        // Load rewards on page load
+        document.addEventListener("DOMContentLoaded", loadRewards);
+    </script>
+</body>
+</html>
