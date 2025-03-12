@@ -18,12 +18,15 @@ class Pet{
     }
 }
 
+// init basic vars
 let coins = 0;
 let choosers = document.querySelectorAll(".galleryCell");
 let clickers = 0;
 let newPet = null;
 let careType = "food";
 let items = [];
+
+// adding onclicks, changing page when pet was created
 document.getElementById("next").onclick = () => {
     let pet = document.getElementById("pet");
     let namePicker = document.getElementById("namePicker")
@@ -31,6 +34,7 @@ document.getElementById("next").onclick = () => {
         document.querySelector(".errmsg").classList.remove("hide");
     }
     else{
+        // changing to display pet page
         document.querySelector(".errmsg").classList.add("hide");
         document.getElementById("gallery").classList.add("hide");
         namePicker.classList.add("hide");
@@ -50,7 +54,6 @@ document.getElementById("next").onclick = () => {
             stage[5].innerText = "Cost: 100 coins";
         }
 
-
         pet.onclick = addCoin;
         setInterval(incrementTime, 10000);
         // 900000 for 15 minutes
@@ -62,6 +65,7 @@ for(let i = 0; i < choosers.length; i++){
     choosers[i].onclick = () => choosePet(choosers[i]);
 }
 
+// changing pet vars over time
 function incrementTime(){
     newPet.xp += 100;
     if(newPet.xp >= 1000){
@@ -81,6 +85,7 @@ function incrementTime(){
     document.getElementById("coins").innerText = coins;
 }
 
+// buying clicker items from store
 function buyItem(event, purchase){
     if(coins >= 100){
         document.getElementById("itemErr").classList.add("hide");
@@ -113,8 +118,10 @@ function buyItem(event, purchase){
     }
 }
 
+// onclick, adding coins, xp, taking care of pet, etc
 function addCoin(){
     coins += newPet.lvl;
+    // adding xp to pet
     newPet.xp++;
     if(newPet.xp == 1000){
         newPet.lvl++;
@@ -139,11 +146,14 @@ function addCoin(){
     }
 
 }
+// displaying pet based on player choice
 function choosePet(pet){
     let display = document.getElementById("pet");
     let petImg = pet.getAttribute("src");
     display.setAttribute("src", petImg);
 }
+
+// evolving pet in exchange for coins
 function evolve(event){
     if(!isNaN(newPet.stage) && coins < 100){
         document.getElementById("evoErr").classList.remove("hide");
@@ -158,6 +168,7 @@ function evolve(event){
 
         let newSrc = "Pictures/" + newPet.base + (newPet.stage + 1) + ".png";
         document.getElementById("pet").setAttribute("src", newSrc);
+        // addding lvl to pet
         newPet.lvl += 3;
         document.getElementById("petLvl").innerText = newPet.lvl;
 
@@ -166,6 +177,8 @@ function evolve(event){
     }
 
 }
+// changing whether player increases happiness, food, or water lvls
+// with clicks
 function changeCare(careName){
     let careTabs = document.getElementsByClassName("care");
     for(let i = 0; i < careTabs.length; i++){
@@ -174,6 +187,8 @@ function changeCare(careName){
     document.getElementById(careName).classList.add("activeTabLink");
     careType = careName;
 }
+
+// function for tabs for stat display
 function changeStatsTabs(event, tabName){
     var i, tabcontent, tablinks;
     
@@ -197,6 +212,8 @@ function changeStatsTabs(event, tabName){
     
     event.currentTarget.classList.add("active");
 }
+
+// function for tabs for shop display
 function changeShopTabs(event, tabName){
     var i, tabcontent, tablinks;
     
