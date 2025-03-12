@@ -6,22 +6,46 @@
     </head>
 
     <body>
-
         <p class="errmsg hide">Please choose a pet and a petname!</p>
-        <div id="petDisplay">
-            <img src="Pictures/blank.png" id="pet"><br>
-            <label for="namePicker">Pet Name:</label>
-            <input type="text" id="namePicker">
+        <div class="flexContainer">
+            <div class="flexContainerColumn">
+                <div id="petDisplay">
+                    <img src="Pictures/blank.png" id="pet"><br>
+                    <label for="namePicker">Pet Name:</label>
+                    <input type="text" id="namePicker">
+                </div>
+                <div class="hide" id="bottomBar">
+                        <button class="tablinks activeTabLink" onclick="changeTabs(event, 'Stats')">Stats</button>
+                        <button class="tablinks" onclick="changeTabs(event, 'Levels')">Levels</button>
+                        <button class="tablinks" onclick="changeTabs(event, 'Bag')">Bag</button>
+                    <div id="Stats" class="tabcontent tab">
+                        <p>Coins: </p>
+                        <p>Clickers Active: </p>
+                        <p>Pet Level: Pet XP:</p>
+                    </div>
+
+                    <div id="Levels" class="tabcontent tab">
+                        <p>Hunger: </p>
+                        <p>Happiness: </p>
+                        <p>Thirst: </p>
+                    </div>
+
+                    <div id="Bag" class="tabcontent tab">
+                        <p>Items: </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="gallery" class="flexWrap tab">
+                <img src="Pictures/ghostcat1.png" class="galleryCell">
+                <img src="Pictures/placeholder.png" class="galleryCell">
+                <img src="Pictures/didoo.png" class="galleryCell">
+                <img src="Pictures/scream.jpg" class="galleryCell">
+            </div>
+            <div class="hide tab" id="shopTab">
+
+            </div>
         </div>
-        <div id="gallery">
-            <p class="galleryLabel">Ghost Cat:</p>
-            <img src="Pictures/ghostcat1.png" class="galleryCell">
-            <img src="Pictures/placeholder.png" class="galleryCell">
-            <img src="Pictures/didoo.png" class="galleryCell">
-            <img src="Pictures/scream.jpg" class="galleryCell">
-        </div>
-        <div class="hide"></div>
-        <div class="hide"></div>
         <button id="next">Next</button>
     </body>
 </html>

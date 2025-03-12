@@ -36,21 +36,23 @@
 #id {
     width: 25%;
 }
-#petDisplay {
+.tab {
     background-color: lightblue;
     border-color: black;
     border-style: solid;
     border-width: 1px;
+}
+#petDisplay {
     padding: 10px;
     margin: 10px;
     width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    float: center;
 }
 #gallery {
-    background-color: lightblue;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    padding: 10px;
+    padding: 20px;
     margin: 10px;
     width: 500px;
 }
@@ -64,17 +66,67 @@
     margin: auto;
 
 }
+#bottomBar {
+    padding: 20px;
+    margin: 10px;
+    width: 500px;
+}
+#shopTab {
+    padding: 20px;
+    margin: 10px;
+}
 button {
     padding: 10px 20px;
-    margin: 5px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
     background-color: lightblue;
+}
+#next {
+    float: right;
     border-radius: 5px;
-    border: none;
-    text-align: right;
 }
 .hide {
     display: none;
 }
 .errmsg {
     color: red;
+}
+.flexContainer {
+    display: flex;
+    flex-direction: row;
+}
+.flexWrep {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.flexContainerColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+label {
+    font-size: 20px;
+    font-family: Helvetica;
+    text-align: center;
+}
+#namePicker {
+    padding: 20px 10px;
+    margin: 10px;
+}
+.tabContent {
+    display: none;
+    padding: 5px 10px;
+    height: 150px;
+}
+#Stats {
+    display: block;
+}
+.activeTabLink {
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 20px;
+    border-width: 2px;
 }
