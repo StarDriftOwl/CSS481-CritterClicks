@@ -6,12 +6,21 @@
     </head>
 
     <body>
-        <div>
-            <img src="" id="pet">
+
+        <p class="errmsg hide">Please choose a pet and a petname!</p>
+        <div id="petDisplay">
+            <img src="Pictures/blank.png" id="pet"><br>
+            <label for="namePicker">Pet Name:</label>
+            <input type="text" id="namePicker">
         </div>
         <div id="gallery">
-
+            <p class="galleryLabel">Ghost Cat:</p>
+            <img src="Pictures/ghostcat1.png" class="galleryCell">
+            <img src="Pictures/placeholder.png" class="galleryCell">
+            <img src="Pictures/didoo.png" class="galleryCell">
+            <img src="Pictures/scream.jpg" class="galleryCell">
         </div>
-
+        <button id="next">Next</button>
     </body>
 </html>
+<script src="pet.js"></script>

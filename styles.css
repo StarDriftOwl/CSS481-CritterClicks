@@ -19,10 +19,62 @@
 .canvas {
     display: none;
 }
-.gallery {
-    width: 25%;
+.galleryCell {
+    width: 200px;
+    height: 200px;
     border-color: black;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
+    margin: 5px;
+}
+.galleryLabel {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
 }
 #id {
     width: 25%;
+}
+#petDisplay {
+    background-color: lightblue;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+}
+#gallery {
+    background-color: lightblue;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+    margin: 10px;
+    width: 500px;
+}
+#pet {
+    width: 200px;
+    height: 200px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
+    margin: auto;
+
+}
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: lightblue;
+    border-radius: 5px;
+    border: none;
+    text-align: right;
+}
+.hide {
+    display: none;
+}
+.errmsg {
+    color: red;
 }
