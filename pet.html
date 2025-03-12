@@ -52,8 +52,9 @@
                 <button class="shop tablinks" onclick="changeShopTabs(event, 'Pet Shop')">Pet Shop</button>
                 <div id="Stage" class="shop tabcontent tab">
                     <h1>Next evolution:</h1>
-                    <img src="Pictures/happycat.png" class="cell" >
+                    <img src="Pictures/happycat.png" class="cell" onclick="evolve(event)">
                     <p></p>
+                    <p id="evoErr" class="errmsg hide">You do not have enough coins to buy this!</p>
                 </div>
 
                 <div id="Item Shop" class="shop tabcontent tab">

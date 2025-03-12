@@ -115,6 +115,13 @@ function buyItem(event, purchase){
 
 function addCoin(){
     coins += newPet.lvl;
+    newPet.xp++;
+    if(newPet.xp == 1000){
+        newPet.lvl++;
+        newPet.xp = 0;
+        document.getElementById("petLvl").innerText = newPet.lvl;
+    }
+    document.getElementById("xp").innerText = newPet.xp;
     document.getElementById("coins").innerText = coins;
     switch (careType){
         case "food":
@@ -137,7 +144,28 @@ function choosePet(pet){
     let petImg = pet.getAttribute("src");
     display.setAttribute("src", petImg);
 }
+function evolve(event){
+    if(!isNaN(newPet.stage) && coins < 100){
+        document.getElementById("evoErr").classList.remove("hide");
+    }
+    else if(!isNaN(newPet.stage)){
+        document.getElementById("evoErr").classList.add("hide");
+        let target = event.target;
+        let siblings = target.parentNode.childNodes;
+        target.setAttribute("src", "Pictures/happycat.png")
+        siblings[1].innerText = "Your pet is fully evolved!";
+        siblings[5].innerText = "";
 
+        let newSrc = "Pictures/" + newPet.base + (newPet.stage + 1) + ".png";
+        document.getElementById("pet").setAttribute("src", newSrc);
+        newPet.lvl += 3;
+        document.getElementById("petLvl").innerText = newPet.lvl;
+
+        coins -= 100;
+        document.getElementById("coins").innerText = coins;
+    }
+
+}
 function changeCare(careName){
     let careTabs = document.getElementsByClassName("care");
     for(let i = 0; i < careTabs.length; i++){
