@@ -12,6 +12,9 @@ class Pet{
         this.lvl = 1;
         this.xp = 0;
         this.isAlive = true;
+        this.hungerClicker = 0;
+        this.happinessClicker = 0;
+        this.thirstClicker = 0;
     }
 }
 
@@ -20,6 +23,7 @@ let choosers = document.querySelectorAll(".galleryCell");
 let clickers = 0;
 let newPet = null;
 let careType = "food";
+let items = [];
 document.getElementById("next").onclick = () => {
     let pet = document.getElementById("pet");
     let namePicker = document.getElementById("namePicker")
@@ -43,7 +47,9 @@ document.getElementById("next").onclick = () => {
         else{
             let nextStage = "Pictures/" + newPet.base + (newPet.stage + 1) + ".png";
             stage[3].setAttribute("src", nextStage);
+            stage[5].innerText = "Cost: 100 coins";
         }
+
 
         pet.onclick = addCoin;
         setInterval(incrementTime, 10000);
@@ -65,6 +71,9 @@ function incrementTime(){
     }
 
     coins += clickers + 1;
+    newPet.hunger += newPet.hungerClicker;
+    newPet.happiness += newPet.happinessClicker;
+    newPet.thirst += newPet.thirstClicker;
     document.getElementById("xp").innerText = newPet.xp;
     document.getElementById("hunger").innerText = --newPet.hunger;
     document.getElementById("happiness").innerText = --newPet.happiness;
@@ -72,6 +81,37 @@ function incrementTime(){
     document.getElementById("coins").innerText = coins;
 }
 
+function buyItem(event, purchase){
+    if(coins >= 100){
+        document.getElementById("itemErr").classList.add("hide");
+        event.target.setAttribute("src", "Pictures/soldout.png");
+        event.target.removeAttribute("onclick");
+        clickers++;
+        switch(purchase){
+            case "foodbowl":
+                newPet.hungerClicker++;
+                items.push("Food bowl");
+                document.getElementById("itemBag").innerText += " food bowl,";
+                break;
+            case "waterbottle":
+                newPet.thirstClicker++;
+                items.push("Water bottle");
+                document.getElementById("itemBag").innerText += " water bottle,";
+                break;
+            case "mousetoy":
+                newPet.happinessClicker++;
+                items.push("Mouse toy");
+                document.getElementById("itemBag").innerText += " mouse toy,";
+                break;
+        }
+        coins -= 100;
+        document.getElementById("coins").innerText = coins;
+        document.getElementById("clickerNo").innerText = clickers;
+    }
+    else{
+        document.getElementById("itemErr").classList.remove("hide");
+    }
+}
 
 function addCoin(){
     coins += newPet.lvl;
