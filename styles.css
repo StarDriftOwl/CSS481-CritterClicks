@@ -29,6 +29,16 @@
     background-color: white;
     margin: 5px;
 }
+.cell {
+    width: 200px;
+    height: 200px;
+    border-color: black;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
+    margin: 5px;
+}
 .galleryLabel {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
@@ -140,4 +150,12 @@ label {
     height: 510px;
     width: 500px;
     padding: 20px;
+}
+button img{
+    width: 20px;
+}
+.shopdisplay {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
