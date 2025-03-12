@@ -18,16 +18,20 @@
                     <button class="stats tablinks activeTabLink" onclick="changeStatsTabs(event, 'Stats')">Stats</button>
                     <button class="stats tablinks" onclick="changeStatsTabs(event, 'Levels')">Levels</button>
                     <button class="stats tablinks" onclick="changeStatsTabs(event, 'Bag')">Bag</button>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <button id="food" class="care activeTabLink" onclick="changeCare('food')"><img src="Pictures/food.png"></button>
+                    <button id="water" class="care" onclick="changeCare('water')"><img src="Pictures/water.png"></button>
+                    <button id="play" class="care" onclick="changeCare('play')"><img src="Pictures/ball.png"></button>
                     <div id="Stats" class="stats tabcontent tab">
-                        <p>Coins: </p>
-                        <p>Clickers Active: </p>
-                        <p>Pet Level: Pet XP:</p>
+                        <p>Coins: <span id="coins">0</span></p>
+                        <p>Clickers Active: <span id="clickerNo">0</span></p>
+                        <p>Pet Level: <span id="petLvl">1</span>&nbsp;&nbsp;&nbsp;&nbsp; Pet XP:<span id="xp">0</span>/1000</p>
                     </div>
 
                     <div id="Levels" class="stats tabcontent tab">
-                        <p>Hunger: </p>
-                        <p>Happiness: </p>
-                        <p>Thirst: </p>
+                        <p>Hunger: <span id="hunger">100</span>/100</p>
+                        <p>Thirst: <span id="thirst">100</span>/100</p>
+                        <p>Happiness: <span id="happiness">100</span>/100</p>
                     </div>
 
                     <div id="Bag" class="stats tabcontent tab">
@@ -47,19 +51,52 @@
                 <button class="shop tablinks" onclick="changeShopTabs(event, 'Item Shop')">Item Shop</button>
                 <button class="shop tablinks" onclick="changeShopTabs(event, 'Pet Shop')">Pet Shop</button>
                 <div id="Stage" class="shop tabcontent tab">
-                    <p>Stage: </p>
+                    <h1>Next evolution:</h1>
+                    <img src="Pictures/happycat.png" class="cell">
                 </div>
 
                 <div id="Item Shop" class="shop tabcontent tab">
-                    <p>Item Shop: </p>
+                    <div class="shopdisplay">
+                        <div class="shopCell">
+                            <img src="Pictures/foodbowl.png" class="cell">
+                            <p>Cost: 100 coins</p>
+                        </div>
+                        <div class="shopCell">
+                            <img src="Pictures/waterbottle.png" class="cell">
+                            <p>Cost: 100 coins</p>
+                        </div>
+                        <div class="shopCell">
+                            <img src="Pictures/mousetoy.png" class="cell">
+                            <p>Cost: 100 coins</p>
+                        </div>
+
+                    </div>
                 </div>
 
                 <div id="Pet Shop" class="shop tabcontent tab">
-                    <p>Pet Shop: </p>
+                    <div class="shopdisplay">
+                        <div class="shopCell">
+                            <img src="Pictures/ghostcat1.png" class="cell">
+                            <p>Cost: 100 coins</p>
+                        </div>
+                        <div class="shopCell">
+                            <img src="Pictures/placeholder.png" class="cell">
+                            <p>Cost: 100 coins</p>
+                        </div>
+                        <div class="shopCell">
+                            <img src="Pictures/didoo.png" class="cell">
+                            <p>Cost: 100 coins</p>
+                        </div>
+                        <div class="shopCell">
+                            <img src="Pictures/scream.jpg" class="cell">
+                            <p>Cost: 100 coins</p>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
         <button id="next">Next</button>
     </body>
 </html>
-<script src="pet.js"></script>
+<script src="script.js"></script>
