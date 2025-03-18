@@ -64,7 +64,7 @@ dist/docs/pixi.api.json
 
 # IDE and OS files
 .idea/
-.vscode/
+# .vscode/
 *.swp
 *.swo
 .DS_Store
