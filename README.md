@@ -17,11 +17,10 @@ This project doesn't include dependencies and devDependencies (since that would 
 `npm run build` - compile project
 
 ## Help!! My local build isn't working
-1. In VSCode, `CTRL + SHIFT + P` to bring up command palette. 
-2. Go to Settings
-3. Look up `files exclude`
-4. Delete `node_modules` since VSCode ignores files that are listed in `.gitignore` \
+1. VSCode > Settings
+2. Look up `files exclude`
+3. Delete `node_modules` since VSCode ignores files that are listed in `.gitignore` \
 (Refer to screenshot)
-1. (Optional) You may need to re-run commands from [build-instructions](#build-instructions).
+4. (Optional) You may need to re-run commands from [build-instructions](#build-instructions).
 
 <img src=VSCode_fileExclude.png width=800>
