@@ -18,12 +18,14 @@ const Game: React.FC = () => {
   };
 
   const handleCredits = () => {
-    console.log("Settings clicked");
+    console.log("credits clicked");
+    window.open("./credits.html", "_self");
     // Settings logic here
   };
 
   const handleRules = () => {
     console.log("Settings clicked");
+    window.open("./rules.html", "_self");
     // Settings logic here
   };
 
