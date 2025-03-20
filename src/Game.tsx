@@ -2,31 +2,32 @@ import React from 'react';
 import './styles.css';
 
 const Game: React.FC = () => {
+
   const handlePlay = () => {
     console.log("Play clicked");
-    // Play logic here
   };
 
   const handleGallery = () => {
     console.log("Gallery clicked");
-    // Gallery logic here
+    window.open("./gallery.html", "_self");
+
   };
 
   const handleSettings = () => {
     console.log("Settings clicked");
-    // Settings logic here
+    window.open("./settings.html", "_self");
+
+    
   };
 
   const handleCredits = () => {
     console.log("credits clicked");
     window.open("./credits.html", "_self");
-    // Settings logic here
   };
 
   const handleRules = () => {
-    console.log("Settings clicked");
+    console.log("Rules clicked");
     window.open("./rules.html", "_self");
-    // Settings logic here
   };
 
 return (
