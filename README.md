@@ -7,9 +7,6 @@ Now rewritten using Typescript, React, and built with Vite
 # Website
 https://stardriftowl.github.io/CSS481-CritterClicks/
 
-## Libraries
-- PixiJS for rendering (See [build instructions](#build-instructions))
-
 ## Build instructions
 This project doesn't include dependencies and devDependencies (since that would take up a lot of storage), so run the following commands: \
 `npm install` - installs required dependencies \
