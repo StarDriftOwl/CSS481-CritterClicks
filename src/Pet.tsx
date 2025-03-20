@@ -47,22 +47,25 @@ const Pet: React.FC = () => {
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  
   const createPet = (name: string, src: string): PetAttributes => {
+    const fullPath = src.includes("/") ? src : `Pictures/${src}`;
+    const fileName = fullPath.split("/").pop() || "";
 
-    const fullPath = src.includes('/') ? src : `Pictures/${src}`;
-    const fileName = fullPath.split('/').pop() || '';
-    
+    const nameWithoutExt = fileName.replace(/\.(png|jpg|jpeg)$/, "");
 
-    const nameWithoutExt = fileName.replace(/\.(png|jpg|jpeg)$/, '');
-    
     const lastChar = nameWithoutExt.charAt(nameWithoutExt.length - 1);
     const stage = parseInt(lastChar);
-    
-    const base = !isNaN(stage) ? nameWithoutExt.substring(0, nameWithoutExt.length - 1) : nameWithoutExt;
-    
-    console.log(`Pet creation: ${name}, src: ${src}, base: ${base}, stage: ${!isNaN(stage) ? stage : 'fully evolved'}`);
-    
+
+    const base = !isNaN(stage)
+      ? nameWithoutExt.substring(0, nameWithoutExt.length - 1)
+      : nameWithoutExt;
+
+    console.log(
+      `Pet creation: ${name}, src: ${src}, base: ${base}, stage: ${
+        !isNaN(stage) ? stage : "fully evolved"
+      }`
+    );
+
     return {
       name,
       src,
@@ -76,7 +79,7 @@ const Pet: React.FC = () => {
       isAlive: true,
       hungerClicker: 0,
       happinessClicker: 0,
-      thirstClicker: 0
+      thirstClicker: 0,
     };
   };
 
@@ -97,7 +100,6 @@ const Pet: React.FC = () => {
 
     const newPet = createPet(petName, selectedPet);
     setPetData(newPet);
-
 
     if (isNaN(newPet.stage)) {
       setEvolutionStatus({
@@ -239,7 +241,6 @@ const Pet: React.FC = () => {
       const newSrc = `Pictures/${petData.base}${nextStage}.png`;
 
       console.log(`Evolving pet from ${petData.src} to ${newSrc}`);
-
 
       setEvolutionStatus({
         text: "Your pet is fully evolved!",
@@ -584,7 +585,11 @@ const Pet: React.FC = () => {
                 <p>Cost: 100 coins</p>
               </div>
               <div className="shopCell">
-                <img src="Pictures/evilcat1.png" className="cell" alt="Scream" />
+                <img
+                  src="Pictures/evilcat1.png"
+                  className="cell"
+                  alt="Scream"
+                />
                 <p>Cost: 100 coins</p>
               </div>
             </div>
