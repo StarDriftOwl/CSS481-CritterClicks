@@ -103,6 +103,9 @@
   transform: scale(1.05);
 }
 
+.text {
+  font-family: Helvetica;
+}
 
 .team-text {
   margin-top: 2rem;
