@@ -3,7 +3,6 @@ import "./styles.css";
 
 const Settings: React.FC = () => {
   const handleMain = () => {
-    // Returning to main menu
     window.open("./index.html", "_self");
   };
 

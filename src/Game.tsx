@@ -1,23 +1,20 @@
-import React from 'react';
-import './styles.css';
+import React from "react";
+import "./styles.css";
 
 const Game: React.FC = () => {
-
   const handlePlay = () => {
     console.log("Play clicked");
+    window.open("./pet.html", "_self");
   };
 
   const handleGallery = () => {
     console.log("Gallery clicked");
     window.open("./gallery.html", "_self");
-
   };
 
   const handleSettings = () => {
     console.log("Settings clicked");
     window.open("./settings.html", "_self");
-
-    
   };
 
   const handleCredits = () => {
@@ -30,23 +27,42 @@ const Game: React.FC = () => {
     window.open("./rules.html", "_self");
   };
 
-return (
-  <div className="game-container">
-  <div className="scrolling-background"></div>
-  <div className="main-menu">
-    <h1 className="menu-title">Critter Clicks</h1>
+  return (
+    <div className="game-container">
+      <div className="scrolling-background"></div>
+      <div className="main-menu">
+        <h1 className="menu-title">Critter Clicks</h1>
 
-    <div className="menu-buttons">
-      <button className="menu-button play-button" onClick={handlePlay}>Play</button>
-      <button className="menu-button gallery-button" onClick={handleGallery}>Pet Gallery</button>
-      <button className="menu-button settings-button" onClick={handleSettings}>Settings</button>
-      <button className="menu-button credits-button" onClick={handleCredits}>Credits</button>
-      <button className="menu-button rules-button" onClick={handleRules}>Rules</button>
+        <div className="menu-buttons">
+          <button className="menu-button play-button" onClick={handlePlay}>
+            Play
+          </button>
+          <button
+            className="menu-button gallery-button"
+            onClick={handleGallery}
+          >
+            Pet Gallery
+          </button>
+          <button
+            className="menu-button settings-button"
+            onClick={handleSettings}
+          >
+            Settings
+          </button>
+          <button
+            className="menu-button credits-button"
+            onClick={handleCredits}
+          >
+            Credits
+          </button>
+          <button className="menu-button rules-button" onClick={handleRules}>
+            Rules
+          </button>
+        </div>
+        <div className="team-text">By Cat Loafers</div>
+      </div>
     </div>
-    <div className="team-text">By Cat Loafers</div>
-  </div>
-  </div>
-);
+  );
 };
 
 export default Game;

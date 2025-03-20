@@ -1,111 +1,110 @@
-
 .gallery-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    color: #333;
-    overflow: hidden;
-  }
-  
-  .galleryCell {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    margin: 10px;
-    border-radius: 15px;
-    border: 3px solid #27acff;
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .galleryCell:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-  }
-  
-  .galleryLabel {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 15px;
-    color: #ff6b99;
-  }
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #333;
+  overflow: hidden;
+}
 
-  .menu-button {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color:#4caf50;
-    color: white;
-  }
+.galleryCell {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 10px;
+  border-radius: 15px;
+  border: 3px solid #27acff;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .menu-button:hover {
-    background-color: #3e8e41;
-    transform: scale(1.05);
-  }
+.galleryCell:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 
-  .image-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    cursor: pointer;
-    /* padding: 5px; */
-  }
-  
-  .modal-content {
-    max-width: 50%;
-    max-height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    /* border: 3px solid white;
+.galleryLabel {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #ff6b99;
+}
+
+.menu-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #4caf50;
+  color: white;
+}
+
+.menu-button:hover {
+  background-color: #3e8e41;
+  transform: scale(1.05);
+}
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+  /* padding: 5px; */
+}
+
+.modal-content {
+  max-width: 50%;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* border: 3px solid white;
     border-radius: 10px; */
-  }
+}
 
-  .scrolling-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(to bottom, #a6e3f7, #ffffff);
-    background-size: 200% 200%;
-    z-index: -1;
-  }
+.scrolling-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, #a6e3f7, #ffffff);
+  background-size: 200% 200%;
+  z-index: -1;
+}
 
-  .menu-title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #000000;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1);
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    animation: colorChange 6s infinite;
-    text-align: center;
-  }
+.menu-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  animation: colorChange 6s infinite;
+  text-align: center;
+}
