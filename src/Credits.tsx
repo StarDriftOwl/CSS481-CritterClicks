@@ -13,8 +13,7 @@ const Credits: React.FC = () => {
         <div className="main-menu">
           <h1 className="menu-title">Critter Clicks</h1>
 
-          <div className="text">
-            
+          <div className="scrollable-text">
             <h1>Credits</h1>
             <p>Developed by team Cat Loafers for CSS 481, Web Development</p>
             <h3>Star</h3>
@@ -29,11 +28,12 @@ const Credits: React.FC = () => {
             <p>Lok is a cs student at UWB, experienced with frameworks like Django, network programming, and databases like MySQL, and SQL lite. He is also familiar with 
               coding languages like C++, C#, Java, Javascript, and Python.</p>
             <h3>Ben</h3>
+
+            </div>
                     
             <div className="menu-buttons">
               <button className="menu-button play-button" onClick={handleMain}>Main Menu</button>
             </div>
-          </div>
         <div className="team-text">By Cat Loafers</div>
       </div>
     </div>
