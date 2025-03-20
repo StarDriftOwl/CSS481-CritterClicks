@@ -5,7 +5,8 @@ Originally written in HTML, CSS, and Javascript \
 Now rewritten using Typescript, React, and built with Vite
 
 # Website
-https://stardriftowl.github.io/CSS481-CritterClicks/
+~~https://stardriftowl.github.io/CSS481-CritterClicks/~~ (not working)
+https://css-481-critter-clicks.vercel.app/
 
 ## Build instructions
 This project doesn't include dependencies and devDependencies (since that would take up a lot of storage), so run the following commands: \
