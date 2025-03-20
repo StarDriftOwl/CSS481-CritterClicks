@@ -5,7 +5,7 @@ Originally written in HTML, CSS, and Javascript \
 Now rewritten using Typescript, React, and built with Vite
 
 # Website
-~~https://stardriftowl.github.io/CSS481-CritterClicks/~~ (not working)
+~~https://stardriftowl.github.io/CSS481-CritterClicks/~~ (not working) \
 https://css-481-critter-clicks.vercel.app/
 
 ## Build instructions
