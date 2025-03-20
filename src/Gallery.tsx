@@ -3,7 +3,6 @@ import React, { useState } from "react";
 
 const Gallery: React.FC = () => {
   const handleMain = () => {
-    // Returning to main menu
     window.open("./index.html", "_self");
   };
 
@@ -41,10 +40,10 @@ const Gallery: React.FC = () => {
             alt="Evil Cat 1"
           />
           <img
-            src="Pictures/goodcat1.png"
+            src="Pictures/evilcat2.png"
             className="galleryCell"
-            onClick={() => openImage("Pictures/goodcat1.png")}
-            alt="Good Cat 1"
+            onClick={() => openImage("Pictures/evilcat2.png")}
+            alt="Evil Cat 2"
           />
         </div>
       </div>

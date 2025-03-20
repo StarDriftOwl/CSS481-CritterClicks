@@ -1,0 +1,287 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f8ff;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.flexContainerColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.flexWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 600px;
+}
+
+#petDisplay {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#pet {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#pet:hover {
+  transform: scale(1.05);
+}
+
+#namePicker {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.galleryCell {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.galleryCell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#bottomBar {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stats,
+.shop {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+.tablinks {
+  background-color: #f1f1f1;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+}
+
+.tablinks:hover {
+  background-color: #d4eaff;
+}
+
+.activeTabLink {
+  background-color: #0aa5ff;
+  color: white;
+}
+
+.activeTabLink:hover {
+  background-color: #004a75;
+}
+
+.tabcontent {
+  display: block;
+  padding: 15px;
+  border-top: none;
+}
+
+.hide {
+  display: none;
+}
+
+.care {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.care img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.care:hover {
+  background-color: #e8e8e8;
+}
+
+#shopTab {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+.shopdisplay {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.shopCell {
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  transition: transform 0.2s;
+}
+
+.shopCell:hover {
+  transform: scale(1.03);
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+#next {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+#next:hover {
+  background-color: #45a049;
+}
+
+#main-menu {
+  background-color: #a9a9a9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+#main-menu:hover {
+  background-color: #db0f0f;
+}
+
+.errmsg {
+  color: #d8000c;
+  background-color: #ffd2d2;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.tab {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .flexContainer {
+    flex-direction: column;
+  }
+
+  #pet {
+    width: 150px;
+    height: 150px;
+  }
+
+  .galleryCell,
+  .cell {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.game-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#next {
+  margin: 20px auto;
+  display: block;
+}
+
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  margin: 0 auto;
+}
