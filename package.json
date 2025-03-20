@@ -2,13 +2,11 @@
   "name": "css481-critterclicks",
   "version": "1.0.0",
   "description": "Project: Clitter Clicks\\\r A Pet Care Simulator and AFK Clicker\\\r Written in HTML, CSS, and Javascript",
-  "homepage": "https://strawbunnyowl.github.io/CSS481-CritterClicks/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
@@ -26,7 +24,6 @@
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "css-loader": "^7.1.2",
-    "gh-pages": "^6.3.0",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
